@@ -42,6 +42,7 @@ from lerobot.robots import (  # noqa: F401
     make_robot_from_config,
     so100_follower,
     so101_follower,
+    so101_6DoF_follower,
 )
 from lerobot.teleoperators import (  # noqa: F401
     Teleoperator,
@@ -51,6 +52,7 @@ from lerobot.teleoperators import (  # noqa: F401
     make_teleoperator_from_config,
     so100_leader,
     so101_leader,
+    so101_6DoF_leader,
 )
 from lerobot.utils.import_utils import register_third_party_devices
 from lerobot.utils.utils import init_logging
@@ -70,11 +72,16 @@ class CalibrateConfig:
 
 @draccus.wrap()
 def calibrate(cfg: CalibrateConfig):
+    print("init_logging!")
     init_logging()
+    print("finished init_logging!")
     logging.info(pformat(asdict(cfg)))
 
+    print("start make robot or teleoperator!")
     if isinstance(cfg.device, RobotConfig):
         device = make_robot_from_config(cfg.device)
+        print("finished make robot or teleoperator!")
+
     elif isinstance(cfg.device, TeleoperatorConfig):
         device = make_teleoperator_from_config(cfg.device)
 
@@ -84,7 +91,9 @@ def calibrate(cfg: CalibrateConfig):
 
 
 def main():
+    print("start register_third_party_devices!")
     register_third_party_devices()
+    print("register_third_party_devices succeed!")
     calibrate()
 
 

@@ -1,10 +1,10 @@
-# SO-101
+# SO-101-6DOF
 
-In the steps below, we explain how to assemble our flagship robot, the SO-101.
+In the steps below, we explain how to assemble our flagship robot, the SO-101-6DOF.
 
 ## Source the parts
 
-Follow this [README](https://github.com/TheRobotStudio/SO-ARM100). It contains the bill of materials, with a link to source the parts, as well as the instructions to 3D print the parts.
+Follow this [README](https://github.com/EmbodiedAI-Group/SO-ARM100-6DOF). It contains the bill of materials, with a link to source the parts, as well as the instructions to 3D print the parts.
 And advise if it's your first time printing or if you don't own a 3D printer.
 
 ## Install LeRobot 🤗
@@ -19,16 +19,17 @@ pip install -e ".[feetech]"
 
 ## Step-by-Step Assembly Instructions
 
-The follower arm uses 6x STS3215 motors with 1/345 gearing. The leader, however, uses three differently geared motors to make sure it can both sustain its own weight and it can be moved without requiring much force. Which motor is needed for which joint is shown in the table below.
+The follower arm uses 7x STS3215 motors with 1/345 gearing. The leader, however, uses three differently geared motors to make sure it can both sustain its own weight and it can be moved without requiring much force. Which motor is needed for which joint is shown in the table below.
 
 | Leader-Arm Axis     | Motor | Gear Ratio |
 | ------------------- | :---: | :--------: |
 | Base / Shoulder Pan |   1   |  1 / 191   |
 | Shoulder Lift       |   2   |  1 / 345   |
 | Elbow Flex          |   3   |  1 / 191   |
-| Wrist Flex          |   4   |  1 / 147   |
-| Wrist Roll          |   5   |  1 / 147   |
-| Gripper             |   6   |  1 / 147   |
+| Elbow roll          |   4   |  1 / 191   |
+| Wrist Flex          |   5   |  1 / 147   |
+| Wrist Roll          |   6   |  1 / 147   |
+| Gripper             |   7   |  1 / 147   |
 
 ### Clean Parts
 
