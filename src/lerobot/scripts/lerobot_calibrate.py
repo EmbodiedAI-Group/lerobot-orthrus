@@ -43,6 +43,7 @@ from lerobot.robots import (  # noqa: F401
     so100_follower,
     so101_follower,
     so101_6DoF_follower,
+    bi_so101_6dof_follower,
 )
 from lerobot.teleoperators import (  # noqa: F401
     Teleoperator,
@@ -53,6 +54,7 @@ from lerobot.teleoperators import (  # noqa: F401
     so100_leader,
     so101_leader,
     so101_6DoF_leader,
+    bi_so101_6dof_leader,
 )
 from lerobot.utils.import_utils import register_third_party_devices
 from lerobot.utils.utils import init_logging
